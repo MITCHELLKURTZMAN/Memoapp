@@ -1,23 +1,31 @@
 import NotesList from "./components/NotesList";
 import {nanoid} from 'nanoid';
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import React, { Children } from 'react'
+import { Grommet, Box, Header, Image, Sidebar, Button, Grid, Card, CardHeader, Heading, CardBody, Paragraph, CardFooter, Text, TextArea } from 'grommet'
+import { Add, OrderedList, Save } from 'grommet-icons'
 
 
 const App = () => {
   const [notes, setNotes] = useState([
-   { id: nanoid(),
-    text: "note 1",
-    date: "february 23,2022"
-   },
-   { id: nanoid(),
-    text: "note 2",
-    date: "february 26,2022"
-   },
-   { id: nanoid(),
-    text: "note 3",
-    date: "february 24,2022"
-   },
+  
   ]);
+
+  useEffect(()=> {
+    const savedNotes = JSON.parse(localStorage.getItem('react-notes-app-data')
+    );
+    if(savedNotes) {
+      setNotes(savedNotes);
+    }
+
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      'react-notes-app-data',
+      JSON.stringify(notes)
+    );
+  }, [notes]);
 
   const addNote = (text) => {
     const date = new Date();
