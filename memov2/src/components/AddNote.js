@@ -8,6 +8,7 @@ const AddNote = ({handleAddNote}) => {
 
     const handleSaveClick = () => {
         handleAddNote(noteText);
+        setNoteText('');
     }
 
     return (
@@ -20,7 +21,7 @@ const AddNote = ({handleAddNote}) => {
             onChange={handleChange}
             ></textarea>
             <div className="note-footer">
-            <small>200 remaining</small>
+            
             <button className="save" onClick={handleSaveClick}> Save </button>
             </div>
         </div>
