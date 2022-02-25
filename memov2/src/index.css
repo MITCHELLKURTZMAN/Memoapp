@@ -1,67 +1,109 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-.container {
-    max-width: 960px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.notes-list {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.note.new {
-    background-color: aqua;
-}
-
-textarea {
-    border: none;
-    resize: none;
-    background-color: aqua;
-}
-
-textarea:focus {
-    outline: none;
-}
-
-.save:hover {
-    background-color: bisque;
-    cursor: pointer;
-}
-
-.save {
-    background-color: azure;
-    border: none;
-    border-radius: 15px;
-    padding: 5px 10px 5px 10px
-}
-
-.note {
-    background-color: #fef68a;
-    border-radius: 10px;
-    padding: 1rem;
-    min-height: 170px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    white-space: pre-wrap;
-}
-
-.note-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    body {
+        background-image: url("https://media1.giphy.com/media/l3q2RgN7WUjeUUXm0/giphy.gif?cid=ecf05e47lebxoi95gyw8vsklchdgk3oy4uv0wbrfe6m49do9&rid=giphy.gif&ct=g");
+        background-color: #142f48;
+        background-repeat: repeat-y;
+        background-size: cover;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace, 'Roboto Serif', sans-serif;
+    }
+    
+    .container {
+        max-width: 960px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    .notes-list {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    
+    .note.new {
+        background-color: #B7B7C0;
+    }
+    
+    textarea {
+        border: none;
+        resize: none;
+        background-color: #B7B7C0;
+    }
+    
+    textarea:focus {
+        outline: none;
+    }
+    
+    .delete {
+        background-color: #B7B7C0;
+        border: none;
+        border-radius: 15px;
+        padding: 5px 10px 5px 10px;
+        outline: none;
+        box-shadow: 0 1px 2px
+    }
+    
+    .delete:hover {
+        background-color: white;
+        cursor: pointer;
+    }
+    
+    .save:hover {
+        background-color: white;
+        cursor: pointer;
+    }
+    
+    .save {
+        background-color: #DBDBDF;
+        border: none;
+        border-radius: 15px;
+        padding: 5px 10px 5px 10px;
+        outline: none;
+        box-shadow: 0 1px 2px
+    }
+    
+    .newnote:hover {
+        background-color: white;
+        cursor: pointer;
+    }
+    
+    .newnote {
+        background-color: #DBDBDF;
+        border: none;
+        border-radius: 15px;
+        padding: 5px 10px 5px 10px;
+        outline: none;
+        box-shadow: 0 1px 2px
+    }
+    
+    .note {
+        background-color: #4B4C61;
+        border-radius: 10px;
+        padding: 1rem;
+        min-height: 170px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        white-space: pre-wrap;
+        box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    }
+    
+    .note-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .time {
+        text-align: justify;
+        display: inline-block;
+    }

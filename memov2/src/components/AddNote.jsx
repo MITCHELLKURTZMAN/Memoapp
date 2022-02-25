@@ -4,6 +4,7 @@ const AddNote = ({handleAddNote}) => {
     const[noteText, setNoteText] = useState('');
     const handleChange = (event) => {
         setNoteText(event.target.value);
+        //enable save
     };
 
     const handleSaveClick = () => {
@@ -11,7 +12,21 @@ const AddNote = ({handleAddNote}) => {
         setNoteText('');
     }
 
+    const handleNew = () => {
+        if (window.confirm('Your changes are unsaved, your note will be lost!')) {
+            setNoteText('');
+    }}
+
+    // const dontsaveempty = () => {
+    //     if (noteText == false){
+    //     console.log("Save button is hidden") 
+    //     }
+    //     else{
+         
+    // }
+
     return (
+        
         <div className= 'note new'>
         <textarea 
             rows='8'
@@ -23,8 +38,10 @@ const AddNote = ({handleAddNote}) => {
             <div className="note-footer">
             
             <button className="save" onClick={handleSaveClick}> Save </button>
+            <button className="newnote" onClick={handleNew}>+</button>
             </div>
         </div>
+        
     );
 };
 

@@ -1,9 +1,7 @@
 import NotesList from "./components/NotesList";
 import {nanoid} from 'nanoid';
 import {useState, useEffect} from "react";
-import React, { Children } from 'react'
-import { Grommet, Box, Header, Image, Sidebar, Button, Grid, Card, CardHeader, Heading, CardBody, Paragraph, CardFooter, Text, TextArea } from 'grommet'
-import { Add, OrderedList, Save } from 'grommet-icons'
+
 
 
 const App = () => {
@@ -27,12 +25,15 @@ const App = () => {
     );
   }, [notes]);
 
+
+
   const addNote = (text) => {
     const date = new Date();
     const newNote= {
       id: nanoid(),
       text: text, 
-      date: date.toLocaleDateString()
+      date: date.toLocaleDateString(),
+      time: date.toLocaleTimeString()
 
     }
     const newNotes = [...notes, newNote];
@@ -47,6 +48,7 @@ const App = () => {
   return (
   
   <div className="container">
+    
     <NotesList 
     notes={notes}
     handleAddNote={addNote}
@@ -54,6 +56,8 @@ const App = () => {
     />
   </div>
   );
+
+  
 };
 
 export default App;
